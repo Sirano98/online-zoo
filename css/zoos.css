@@ -1,0 +1,675 @@
+/* Camera
+============== */
+.camera {
+    padding: 40px 0px 140px;
+}
+.camera__title {
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 120%;
+    color: #333b41;
+    margin-bottom: 10px;
+}
+.camera__video {
+    width: 100%;
+    height: 652px;
+    margin-bottom: 40px;
+}
+.camera__slider {
+    width: 100%;
+    height: 210px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.slider__item {
+    width: 25%;
+    height: 100%;
+    margin-left: 30px;
+    position: relative;
+}
+.slider__item:first-child {
+    margin-left: 0px;
+}
+.slider__item::before {
+    content: "live";
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: #000000;
+    text-transform: uppercase;
+    padding: 0px 11px;
+    border-radius: 5px;
+}
+.item__block {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+.slider__video {
+    height: 100%;
+    width: 100%;
+}
+.slider__btn {
+    width: 62px;
+    height: 62px;
+    background: linear-gradient(113.96deg, #f9804b 1.49%, #fe9013 101.44%);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    padding: 0px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s linear;
+}
+.slider__btn-right {
+    right: -82px;
+}
+.slider__btn-left {
+    left: -82px;
+}
+.btn-icon {
+    width: 20px;
+    transition: 0.1s linear;
+}
+.slider__btn:hover {
+    padding-top: 5px;
+    box-shadow: 0 0 20px 5px #8b8b8b;
+}
+.slider__btn:hover .btn-icon {
+    width: 25px;
+}
+.slider__btn:active {
+    background: #4b9200;
+}
+
+/* Info
+============== */
+.info {
+    padding-bottom: 180px;
+    position: relative;
+}
+.info::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 290px;
+    height: 229px;
+    z-index: -1;
+    background: url("../assets/images/zooFlower.png") no-repeat;
+}
+.info::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 215px;
+    height: 204px;
+    background: url("../assets/images/zooLeaf.png") no-repeat;
+}
+.info__title {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 120%;
+    color: #4b9200;
+    margin: 0px 0px 20px;
+}
+.info__header {
+    display: flex;
+    padding-bottom: 20px;
+    margin-bottom: 48px;
+    border-bottom: 1px solid #767474;
+}
+.info__content {
+    margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-self: end;
+}
+.content__text {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 140%;
+    color: #ababab;
+    margin-bottom: 40px;
+}
+.description__title {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 120%;
+    color: #000000;
+    margin: 30px 0px 10px;
+}
+.description__text {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: #000000;
+    margin-bottom: 20px;
+}
+.description__text-above-list {
+    margin-bottom: 0px;
+}
+.description__text-list {
+    margin-top: 0px;
+    padding: 0px;
+    list-style-position: inside;
+}
+.description__btn {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: #000000;
+    border: 1px solid #333b41;
+    outline: none;
+    width: 130px;
+    height: 42px;
+    border-radius: 5px;
+    margin-top: 40px;
+    transition: 0.1s linear;
+}
+.description__btn:hover {
+    color: #fe9013;
+    border: 1px solid #fe9013;
+    cursor: pointer;
+}
+.description__btn:active {
+    color: #4b9200;
+    border: 1px solid #4b9200;
+}
+.info__link {
+    text-decoration: none;
+    color: #4b9200;
+}
+.description__spoiler-close {
+    display: none;
+}
+
+/* Donate
+============== */
+.donate {
+    height: 390px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    overflow: hidden;
+}
+.donate-eagle {
+    background: url("../assets/images/eagle_bg.png") center/cover no-repeat;
+}
+.donate-panda {
+    background: url("../assets/images/panda_bg.png") center/cover no-repeat;
+}
+.donate-alligator {
+    background: url("../assets/images/alligator_bg.png") center/cover no-repeat;
+}
+.donate-gorilla {
+    background: url("../assets/images/gorilla_bg.png") center/cover no-repeat;
+}
+.zoos__btn {
+    margin-bottom: 60px;
+}
+
+/* Sidebar
+=============== */
+.sidebar {
+    position: sticky;
+    float: left;
+    top: 30px;
+    left: 30px;
+    bottom: 80px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0px 10px 30px;
+    z-index: 999;
+    padding: 16px 0px;
+    background: linear-gradient(
+            315.75deg,
+            rgba(254, 210, 144, 0.7) 30.06%,
+            #febdab 100.95%,
+            rgba(254, 210, 144, 0.7) 106.36%
+        ),
+        linear-gradient(
+            315.75deg,
+            rgba(254, 189, 171, 0.74) 30.06%,
+            rgba(243, 169, 248, 0.66) 50.74%,
+            #e0d8f0 80.49%,
+            #eaf7fe 127.9%,
+            #eaf7fe 149.54%
+        ),
+        linear-gradient(
+            315.75deg,
+            rgba(254, 189, 171, 0.74) 30.06%,
+            rgba(243, 169, 248, 0.66) 50.74%,
+            #e0d8f0 80.49%,
+            #eaf7fe 127.9%,
+            #eaf7fe 149.54%
+        );
+    border-radius: 5px;
+}
+.sidebar__item {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #f9804b;
+    background: #ffffff;
+    position: relative;
+    margin: 5px;
+}
+.sidebar__item:hover::after {
+    content: attr(data-animal);
+    position: absolute;
+    background: rgba(254, 144, 19, 0.5);
+    padding: 3px 4px;
+    border-radius: 3px;
+    top: 50%;
+    left: 85px;
+    transform: translateY(-50%);
+}
+.sidebar__item:last-child::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 62px;
+    height: 62px;
+}
+.sidebar__link {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.sidebar__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.sidebar__item:hover {
+    border: 2px solid #4b9200;
+}
+.sidebar__item:hover .sidebar__icon {
+    fill: #4b9200;
+}
+.sidebar__item-active {
+    border: 2px solid #4b9200;
+}
+.sidebar__item-active .sidebar__icon {
+    fill: #4b9200;
+}
+.sidebar__icon-active .sidebar__icon {
+    fill: #4b9200;
+}
+.sidebar__item:last-child:hover::before {
+    border: 1px solid #4b9200;
+}
+
+/* Adaptive
+============== */
+@media (max-width: 1599px) {
+    .camera__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .camera__title {
+        align-self: flex-start;
+    }
+    .camera__video {
+        width: 778px;
+        max-height: 438px;
+    }
+    .camera__slider {
+        max-width: 778px;
+        max-height: 210px;
+        overflow: hidden;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .slider__item {
+        width: 293px;
+    }
+    .slider__btn-left {
+        left: 646px;
+        top: 145px;
+    }
+    .slider__btn-right {
+        right: 70px;
+        top: 73px;
+    }
+}
+
+@media (max-width: 1415px) {
+    .sidebar {
+        position: absolute;
+        margin: 0px;
+        top: 187px;
+        left: 30px;
+    }
+    .info__header-photo {
+        width: 422px;
+        height: 421px;
+    }
+    .info::before {
+        width: 180px;
+        height: 139px;
+        background: url("../assets/images/zooFlower-small-desktop.png") no-repeat;
+    }
+    .info::after {
+        width: 168px;
+        height: 171px;
+        background: url("../assets/images/zooLeaf-small-desktop.png") no-repeat;
+    }
+    .donate-alligator {
+        background: url("../assets/images/alligator_bg.png") 70% / cover no-repeat;
+    }
+}
+
+@media (max-width: 1070px) {
+    .camera {
+        padding: 20px 0px 100px;
+    }
+    .camera__title {
+        margin-bottom: 14px;
+    }
+    .camera__video {
+        margin-bottom: 60px;
+    }
+    .camera__inner {
+        align-items: flex-end;
+    }
+    .sidebar {
+        padding: 0px;
+    }
+    .sidebar__item {
+        width: 52px;
+        height: 52px;
+        margin: 10px;
+        margin-bottom: 0px;
+    }
+    .sidebar__icon-gorilla {
+        width: 35.75px;
+        height: 30.55px;
+    }
+    .sidebar__icon-alligator {
+        width: 41.6px;
+        height: 19.5px;
+    }
+    .sidebar__icon-panda {
+        width: 37.7px;
+        height: 27.3px;
+    }
+    .sidebar__icon-eagle {
+        width: 39.65px;
+        height: 35.1px;
+    }
+    .sidebar__icon-sloth {
+        width: 39.65px;
+        height: 35.1px;
+    }
+    .sidebar__icon-penguin {
+        width: 20.24px;
+        height: 37px;
+    }
+    .sidebar__item:last-child {
+        margin-bottom: 10px;
+    }
+    .sidebar__item:last-child::before {
+        display: none;
+        border: 2px solid #000000;
+    }
+    .sidebar__item:hover::after {
+        left: 65px;
+    }
+    .content__text {
+        font-size: 22px;
+    }
+    .info__header {
+        border: none;
+        padding: 0px;
+        margin-bottom: 60px;
+    }
+    .info__header-photo {
+        max-width: 455px;
+        max-height: 458px;
+    }
+    .info__content {
+        margin-left: 30px;
+    }
+}
+@media (max-width: 950px) {
+    .camera {
+        padding-bottom: 60px;
+    }
+    .camera__inner {
+        align-items: center;
+    }
+    .camera__title {
+        margin-bottom: 10px;
+        font-size: 36px;
+        line-height: 130%;
+    }
+    .camera__video {
+        margin-bottom: 20px;
+        width: 495px;
+        height: 278px;
+    }
+    .camera__slider {
+        width: 495px;
+        height: 140px;
+    }
+    .slider__item {
+        width: 180px;
+    }
+    .slider__btn {
+        width: 42.81px;
+        height: 42.81px;
+    }
+    .slider__btn-right {
+        right: 33px;
+        top: 45px;
+    }
+    .slider__btn-left {
+        left: 420px;
+        top: 95px;
+    }
+    .sidebar {
+        top: 150px;
+        left: 20px;
+    }
+    .info {
+        padding-bottom: 147px;
+    }
+    .info__title {
+        text-align: center;
+    }
+    .info__header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .info__header-photo {
+        max-width: 390px;
+        max-height: 393px;
+        margin-bottom: 30px;
+    }
+    .info__content {
+        margin: 0px;
+    }
+    .content__text {
+        max-width: 100%;
+    }
+    .content__btn {
+        display: block;
+        margin: 0 auto;
+    }
+    .info::before {
+        width: 138px;
+        height: 107px;
+        background: url("../assets/images/zooFlower-tablet.png") no-repeat;
+    }
+    .info::after {
+        width: 126px;
+        height: 120px;
+        background: url("../assets/images/zooLeaf-tablet.png") no-repeat;
+    }
+    .donate {
+        height: 293px;
+    }
+    .zoos__btn {
+        margin-bottom: 40px;
+    }
+}
+@media (max-width: 766px) {
+    .sidebar {
+        top: 123px;
+    }
+    .camera {
+        margin-top: 48px;
+    }
+}
+@media (max-width: 730px) {
+    .camera__inner {
+        align-items: flex-end;
+    }
+    .info__header {
+        align-items: flex-start;
+    }
+    .content__text {
+        max-width: 420px;
+    }
+    .donate-panda {
+        background: url("../assets/images/panda_bg.png") 40% / cover no-repeat;
+    }
+}
+@media (max-width: 639px) {
+    .video__wrapper {
+        width: 100%;
+    }
+    .camera__video {
+        width: 100%;
+    }
+    .camera__title {
+        font-size: 24px;
+        line-height: 120%;
+    }
+    .sidebar {
+        flex-wrap: wrap;
+        height: 233px;
+        overflow: hidden;
+        top: 410px;
+        left: 10px;
+    }
+    .sidebar__item {
+        margin: 5px;
+        margin-bottom: 0px;
+    }
+    .sidebar__item:last-child {
+        margin-bottom: 5px;
+    }
+    div[data-animal="gorilla"] {
+        order: -2;
+    }
+    div[data-animal="alligator"] {
+        order: -2;
+    }
+    div[data-animal="panda"] {
+        order: -2;
+    }
+    div[data-animal="more"] {
+        order: -1;
+    }
+    .camera__slider {
+        justify-content: flex-end;
+        overflow: visible;
+        width: 68%;
+        height: 186px;
+    }
+    .slider__btn {
+        display: none;
+    }
+    .slider__item {
+        width: 47%;
+        height: 46%;
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+    .slider__item:nth-child(3n) {
+        margin-left: 0px;
+    }
+    .camera {
+        padding-bottom: 25px;
+    }
+    .info__title {
+        font-weight: normal;
+        font-size: 24px;
+        margin-bottom: 10px;
+        max-width: 184px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .info__header {
+        align-items: center;
+        margin-bottom: 40px;
+    }
+    .photo__wrapper {
+        overflow: hidden;
+        max-width: 100%;
+        width: 319px;
+        max-height: 193px;
+        margin-bottom: 20px;
+    }
+    .info__header-photo {
+        transform: translate(-52px, -75px) scale(0.7);
+    }
+    .info__content {
+        max-width: 100%;
+    }
+    .content__text {
+        font-weight: normal;
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    .info::before {
+        width: 85px;
+        height: 63px;
+        background: url("../assets/images/zooFlower-mobile.png") no-repeat;
+        bottom: 0px;
+    }
+    .info::after {
+        width: 66px;
+        height: 66px;
+        background: url("../assets/images/zooLeaf-mobile.png") no-repeat;
+        bottom: 0px;
+    }
+    .info {
+        padding-bottom: 80px;
+    }
+    .donate-alligator {
+        background: url("../assets/images/alligator_bg.png") 80% / cover no-repeat;
+    }
+    .donate-panda {
+        background: url("../assets/images/panda_bg.png") 25% / cover no-repeat;
+    }
+    .donate-eagle {
+        background: url("../assets/images/eagle_bg.png") 62% / cover no-repeat;
+    }
+    .zoos__btn {
+        margin-bottom: 10px;
+    }
+}

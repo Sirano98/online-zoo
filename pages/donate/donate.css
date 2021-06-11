@@ -1,0 +1,400 @@
+@import "../../css/fonts.css";
+@import "../../css/normalize.css";
+@import "../../css/general.css";
+@import "../../css/header.css";
+@import "../../css/footer.css";
+
+.donate {
+    padding-bottom: 140px;
+    background: linear-gradient(
+            315.75deg,
+            rgba(254, 210, 144, 0.7) 30.06%,
+            #febdab 100.95%,
+            rgba(254, 210, 144, 0.7) 106.36%
+        ),
+        linear-gradient(
+            315.75deg,
+            rgba(254, 189, 171, 0.74) 30.06%,
+            rgba(243, 169, 248, 0.66) 50.74%,
+            #e0d8f0 80.49%,
+            #eaf7fe 127.9%,
+            #eaf7fe 149.54%
+        ),
+        linear-gradient(
+            315.75deg,
+            rgba(254, 189, 171, 0.74) 30.06%,
+            rgba(243, 169, 248, 0.66) 50.74%,
+            #e0d8f0 80.49%,
+            #eaf7fe 127.9%,
+            #eaf7fe 149.54%
+        );
+}
+.donate__photo {
+    background: url("../../assets/images/donate_photo.png") center/cover no-repeat;
+    height: 390px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+.donate__title {
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 130%;
+    color: #ffffff;
+}
+.donate__title-info {
+    color: #fe9013;
+    margin-bottom: 60px;
+}
+.donate__text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+.donate__content {
+    background: rgba(255, 255, 255, 0.52);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    padding: 40px 92px 62px;
+}
+.content__title {
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 120%;
+    text-align: center;
+    color: #fe9013;
+    margin-bottom: 20px;
+}
+.content__text {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 120%;
+    color: #333b41;
+}
+.content__animal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+.animal__text {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    color: #333b41;
+    margin-right: 11px;
+}
+.text__number {
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 80%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    display: block;
+    margin-bottom: 11px;
+}
+.animal__icon {
+    margin-left: 64px;
+    width: 284px;
+    height: 246px;
+}
+.donate__comment {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: #000000;
+    margin-top: 48px;
+    margin-bottom: 17px;
+}
+
+.donate__range {
+    background: #404950;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2px;
+    padding: 1px 30px;
+}
+.donate__range::before {
+    content: "";
+    position: absolute;
+    background: #72828e;
+    height: 2px;
+    width: calc(100% - 75px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+.range__item {
+    position: relative;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.range__input {
+    z-index: 1000;
+    opacity: 0;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+.range__label {
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #333b41;
+}
+.label-small {
+    font-size: 24px;
+}
+.range__decoration {
+    display: inline-block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #ffee2e;
+}
+.range__input:checked ~ .range__label {
+    color: #fe9013;
+}
+.range__input:checked ~ .range__decoration::before {
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border-radius: 50%;
+    border: 2px solid #fe9013;
+}
+.range__input:checked ~ .range__decoration::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border-radius: 50%;
+    border: 2px solid #fe9013;
+}
+
+.donate__another {
+    margin-top: 108px;
+    margin-bottom: 6px;
+    width: 268px;
+    height: 54px;
+    background: transparent url("../../assets/icons/dollar.svg") 96% center no-repeat;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: #929699;
+    border: 1px solid #929699;
+    border-radius: 2px;
+    padding-left: 9px;
+    outline: none;
+}
+.donate__another::-webkit-outer-spin-button,
+.donate__another::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.donate__another {
+    -moz-appearance: textfield;
+}
+.donate__period {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.period__item {
+    display: flex;
+    align-items: center;
+}
+.period__item:first-child {
+    margin-right: 50px;
+}
+.period__input {
+    z-index: 1000;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    opacity: 0;
+}
+.period__label {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: #333b41;
+    position: relative;
+}
+.period__label::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fe9013;
+    border-radius: 50%;
+    top: 3px;
+    left: -26px;
+}
+.period__input:checked ~ .period__label::before {
+    border: none;
+    background: #4b9200;
+}
+.donate__btn {
+    display: block;
+    margin: 0 auto;
+}
+.bottom-text {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: #333b41;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Adaptive
+================ */
+@media (max-width: 1000px) {
+    .range__item:first-child {
+        display: none;
+    }
+}
+@media (max-width: 885px) {
+    .donate {
+        padding-bottom: 46px;
+    }
+    .donate__content {
+        padding: 30px 0px;
+    }
+    .donate__photo {
+        background: url("../../assets/images/donate_photo.png") 35% / cover no-repeat;
+        height: 335px;
+        margin-bottom: 30px;
+    }
+    .donate__title {
+        font-size: 24px;
+        line-height: 120%;
+    }
+    .donate__text {
+        margin: 20px 0px 30px;
+        font-weight: 400;
+    }
+    .donate__title-info {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 36px;
+        line-height: 130%;
+        margin-bottom: 30px;
+    }
+    .content__text {
+        text-align: center;
+        max-width: 600px;
+        margin: 0px auto;
+    }
+    .donate__comment {
+        margin: 40px 0px 10px 10px;
+    }
+    .range__item:nth-child(2),
+    .range__item:nth-child(3) {
+        display: none;
+    }
+    .donate__another {
+        margin: 82px 0px 40px 10px;
+    }
+    .donate__period {
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 766px) {
+    .donate {
+        margin-top: 48px;
+    }
+}
+@media (max-width: 580px) {
+    .donate__photo {
+        height: 187px;
+    }
+    .animal__icon {
+        width: 160px;
+        height: 138px;
+        margin-left: 36px;
+    }
+    .donate__title-info {
+        font-size: 24px;
+        line-height: 120%;
+    }
+    .donate__content {
+        padding: 20px 0px;
+    }
+    .content__title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .content__text {
+        font-size: 16px;
+        line-height: 140%;
+    }
+    .animal__text {
+        font-size: 9px;
+        line-height: 140%;
+    }
+    .text__number {
+        font-size: 40px;
+        line-height: 80%;
+    }
+    .content-symbol {
+        width: 8px;
+        height: 8px;
+    }
+    .donate__comment {
+        margin: 10px 0px;
+    }
+    .range__label {
+        font-size: 13px;
+    }
+    .label-small {
+        font-size: 13px;
+    }
+    .donate__range {
+        padding: 0px 17px;
+    }
+    .range__input {
+        width: 20px;
+        height: 20px;
+    }
+    .range__decoration {
+        width: 5px;
+        height: 5px;
+    }
+    .donate__range::before {
+        width: calc(100% - 58px);
+    }
+    .donate__another {
+        margin: 46px 0px 30px;
+        width: 180px;
+        height: 42px;
+    }
+    .bottom-text {
+        font-size: 15px;
+    }
+}

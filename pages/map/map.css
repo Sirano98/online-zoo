@@ -1,0 +1,137 @@
+@import "../../css/fonts.css";
+@import "../../css/normalize.css";
+@import "../../css/general.css";
+@import "../../css/header.css";
+@import "../../css/footer.css";
+
+.map {
+    background: #eaf7fe;
+    padding-bottom: 2.7%;
+}
+.inner__map {
+    max-width: 100%;
+    position: relative;
+}
+.map__background {
+    width: 100%;
+}
+.animal__img {
+    width: 100%;
+}
+.animal {
+    position: absolute;
+    max-width: 5%;
+}
+.first-eagle {
+    top: 51.5%;
+    left: 8%;
+}
+.second-eagle {
+    top: 56%;
+    left: 11.5%;
+}
+.alligator {
+    top: 58%;
+    left: 23%;
+}
+.gorilla {
+    bottom: 25%;
+    left: 50%;
+}
+.panda {
+    bottom: 47%;
+    right: 21.5%;
+}
+.pandas {
+    bottom: 39%;
+    right: 21.5%;
+}
+.animal__tooltip {
+    display: none;
+    background: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    width: 160px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    margin-right: 10px;
+}
+.animal__tooltip::before {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    background: #ffffff;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    transform: rotate(45deg);
+    top: -6.5px;
+    left: 67px;
+}
+.tooltip__text {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    margin-left: 10px;
+    text-align: start;
+}
+.tooltip__text:first-child {
+    margin-top: 7px;
+}
+.tooltip__link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    color: #4b9200;
+    width: 135px;
+    margin: 11px 11px 15px;
+}
+.animal:hover .animal__tooltip {
+    display: block;
+}
+.map__buttons {
+    margin-right: 2.7%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.map__btn {
+    width: 54px;
+    height: 54px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.map__btn:first-child {
+    margin-bottom: 10px;
+}
+.map__btn:active {
+    border: 1px solid #4b9200;
+}
+.map__btn:active .btn__icon {
+    fill: #4b9200;
+}
+
+/* Adaptive
+============== */
+@media (max-width: 999px) {
+    .map__buttons {
+        display: none;
+    }
+}
+@media (max-width: 766px) {
+    .map {
+        margin-top: 48px;
+    }
+}
