@@ -43,3 +43,19 @@ const videoSlider = new Swiper(".video-slider", {
         }
     }
 });
+
+const sidebarSlider = new Swiper(".sidebar", {
+    direction: "vertical",
+    spaceBetween: 5,
+    navigation: {
+        nextEl: '.slider__btn-more',
+    },
+    breakpoints: {
+        639: {
+            slidesPerView: 6
+        },
+        300: {
+            slidesPerView: 4
+        }
+    }
+})
