@@ -31,7 +31,8 @@ const videoSlider = new Swiper(".video-slider", {
     },
     breakpoints: {
         1600: {
-            slidesPerView: 4
+            slidesPerView: 4,
+            spaceBetween: 30
         },
         640: {
             slidesPerView: 2,
