@@ -277,7 +277,7 @@
     position: relative;
     margin: 5px;
 }
-.sidebar__item:hover::after {
+/* .sidebar__item:hover::after {
     content: attr(data-animal);
     position: absolute;
     background: rgba(254, 144, 19, 0.5);
@@ -286,18 +286,6 @@
     top: 50%;
     left: 85px;
     transform: translateY(-50%);
-}
-/* .sidebar__item:last-child::before {
-    content: "";
-    position: absolute;
-    background-color: transparent;
-    border-radius: 50%;
-    border: 1px solid #000000;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 62px;
-    height: 62px;
 } */
 .sidebar__link {
     display: inline-block;
@@ -408,7 +396,6 @@
     .sidebar__item {
         width: 52px;
         height: 52px !important;
-        /* margin: 10px; */
         margin-bottom: 0px;
     }
     .sidebar__icon-gorilla {
@@ -585,29 +572,7 @@
     }
     .sidebar__item {
         margin: 0px;
-        /* margin-bottom: 0px;
-        margin-top: 0px; */
     }
-    /* .sidebar__item-more {
-        position: absolute;
-        z-index: 1;
-        bottom: 5px;
-    } */
-    /* .sidebar__item:last-child {
-        margin-bottom: 5px;
-    }
-    div[data-animal="gorilla"] {
-        order: -2;
-    }
-    div[data-animal="alligator"] {
-        order: -2;
-    }
-    div[data-animal="panda"] {
-        order: -2;
-    }
-    div[data-animal="more"] {
-        order: -1;
-    } */
     .slider__btn {
         display: none;
     }
