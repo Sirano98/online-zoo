@@ -7,10 +7,17 @@
 .map {
     background: #eaf7fe;
     padding-bottom: 2.7%;
+    height: 938px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
 }
 .inner__map {
-    max-width: 100%;
-    position: relative;
+    width: 100%;
+    position: absolute;
+    flex-shrink: 0;
 }
 .map__background {
     width: 100%;
@@ -96,10 +103,11 @@
     display: block;
 }
 .map__buttons {
-    margin-right: 2.7%;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
 }
 .map__btn {
     width: 54px;
@@ -125,7 +133,15 @@
 
 /* Adaptive
 ============== */
+/* @media (max-width: 1300px) {
+    .map__buttons {
+        bottom: -50px;
+    }
+} */
 @media (max-width: 999px) {
+    .map {
+        height: 747px;
+    }
     .map__buttons {
         display: none;
     }
@@ -133,5 +149,15 @@
 @media (max-width: 766px) {
     .map {
         margin-top: 48px;
+    }
+}
+@media (max-width: 640px) {
+    .map {
+        height: 474px;
+    }
+}
+@media (max-width: 400px) {
+    .map {
+        height: 375px;
     }
 }
