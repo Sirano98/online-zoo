@@ -10,9 +10,12 @@ btnPlus.addEventListener("click", zoomIn);
 btnMinus.addEventListener("click", zoomOut);
 mapBlock.addEventListener("mousedown", grabMap);
 mapBlock.addEventListener("mouseup", putMap);
-map.addEventListener("dragstart", function (event) {
-    event.preventDefault();
-});
+map.addEventListener("dragstart", function (event) { event.preventDefault() });
+
+/*for optimization */
+mapBlock.addEventListener("touchstart", grabMapByTouch);
+mapBlock.addEventListener("touchend", putMapByTouch);
+// ========
 
 function zoomIn() {
     let currentWidth = map.clientWidth;
@@ -31,23 +34,36 @@ function zoomOut() {
 }
 
 function grabMap(event) {
-    // startMovePointHorizontal = event.clientX;
-    // startMovePointVertical = event.clientY;
     startMovePointHorizontal = event.clientX - map.getBoundingClientRect().left;
     startMovePointVertical = event.clientY - map.getBoundingClientRect().top;
-    // console.log(map.getBoundingClientRect().left);
     mapBlock.addEventListener("mousemove", moveMap);
 }
 
 function putMap() {
-    // console.log(map.getBoundingClientRect().left);
     mapBlock.removeEventListener("mousemove", moveMap);
 }
 
 function moveMap(event) {
-    // map.style.left = -(startMovePointHorizontal - event.clientX) + "px";
-    // console.log(map.style.left);
-    // map.style.top = -(startMovePointVertical - event.clientY) + "px";
     map.style.left = event.pageX - startMovePointHorizontal + "px";
     map.style.top = event.pageY - startMovePointVertical + "px";
+}
+
+function grabMapByTouch(event) {
+    if (event.changedTouches.length > 1) {
+        let touchLocation = event.changedTouches[0];
+        startMovePointHorizontal = touchLocation.clientX - map.getBoundingClientRect().left;
+        startMovePointVertical = touchLocation.clientY - map.getBoundingClientRect().top;
+        window.ontouchmove = event.preventDefault();
+        mapBlock.addEventListener("touchmove", moveByTouch);
+    }
+}
+
+function moveByTouch(event) {
+    map.style.left = event.changedTouches[0].pageX - startMovePointHorizontal + "px";
+    map.style.top = event.changedTouches[0].pageY - startMovePointVertical + "px";
+}
+
+function putMapByTouch() {
+    window.ontouchmove = null;
+    mapBlock.removeEventListener("touchmove", moveByTouch);
 }
