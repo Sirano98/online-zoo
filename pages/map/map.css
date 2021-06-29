@@ -7,12 +7,13 @@
 .map {
     background: #eaf7fe;
     padding-bottom: 2.7%;
-    height: 80vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     position: relative;
+    cursor: grab;
 }
 .inner__map {
     width: 100%;
@@ -24,6 +25,7 @@
 }
 .animal__img {
     width: 100%;
+    cursor: pointer;
 }
 .animal {
     position: absolute;
@@ -102,6 +104,9 @@
 .animal:hover .animal__tooltip {
     display: block;
 }
+.animal__tooltip-active {
+    display: block;
+}
 .map__buttons {
     display: flex;
     flex-direction: column;
@@ -135,6 +140,9 @@
 ============== */
 
 @media (max-width: 999px) {
+    .map {
+        height: 80vh;
+    }
     .map__btn {
         width: 40px;
         height: 40px;

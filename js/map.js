@@ -1,7 +1,8 @@
 const map = document.querySelector(".inner__map"),
     btnPlus = document.querySelector(".map__btn-plus"),
     btnMinus = document.querySelector(".map__btn-minus"),
-    mapBlock = document.querySelector(".map");
+    mapBlock = document.querySelector(".map"),
+    tooltips = document.querySelectorAll(".animal__tooltip");
 
 let shiftX,
     shiftY,
@@ -10,6 +11,7 @@ let shiftX,
     typeOfEvent,
     headerHeight;
 
+// document.addEventListener("touchstart", toggleTooltips);
 btnPlus.addEventListener("click", zoomIn);
 btnMinus.addEventListener("click", zoomOut);
 btnPlus.addEventListener("touchstart", zoomIn);
@@ -36,33 +38,37 @@ function zoomOut() {
 }
 
 function grabMap(event) {
-    headerHeight = document.querySelector(".header").getBoundingClientRect().height;
     checkTypeOfEvent(event);
-    shiftX = touchPointX.clientX - map.getBoundingClientRect().left;
-    shiftY = touchPointY.clientY - map.getBoundingClientRect().top;
-    mapBlock.addEventListener(typeOfEvent, moveMap);
+    headerHeight = document.querySelector(".header").getBoundingClientRect().height;
+    shiftX = (event.changedTouches ? event.changedTouches[0].pageX : event.pageX) - map.getBoundingClientRect().left;
+    shiftY = (event.changedTouches ? event.changedTouches[0].pageY : event.pageY) - map.getBoundingClientRect().top;
+    mapBlock.addEventListener("mousemove", moveMap);
+    mapBlock.addEventListener("touchmove", moveMap);
     window.onscroll = event.preventDefault();
 }
 
 function moveMap(event) {
-    checkTypeOfEvent(event);
-    map.style.left = touchPointX.pageX - shiftX + "px";
-    map.style.top = touchPointY.pageY - shiftY - headerHeight + "px";
+    map.style.left = (event.changedTouches ? event.changedTouches[0].pageX : event.pageX) - shiftX + "px";
+    map.style.top = (event.changedTouches ? event.changedTouches[0].pageY : event.pageY) - shiftY - headerHeight + "px"
 }
 
 function putMap() {
-    mapBlock.removeEventListener(typeOfEvent, moveMap);
+    mapBlock.removeEventListener("mousemove", moveMap);
+    mapBlock.removeEventListener("touchmove", moveMap);
     window.onscroll = null;
 }
 
 function checkTypeOfEvent(event) {
     if (event.touches) {
-        touchPointX = event.changedTouches[0];
-        touchPointY = event.changedTouches[0];
-        typeOfEvent = "touchmove";
-    } else {
-        touchPointX = event;
-        touchPointY = event;
-        typeOfEvent = "mousemove"
+        if (event.target.className === "animal__img") {
+            event.target.nextElementSibling.classList.toggle("animal__tooltip-active");
+        } else if (event.target.className === "tooltip__link" && "animal__tooltip") {
+            mapBlock.removeEventListener("touchstart", grabMap);
+            mapBlock.removeEventListener("mousedown", grabMap);
+        } else {
+            tooltips.forEach(tooltip => {
+                tooltip.classList.remove("animal__tooltip-active");
+            });
+        }
     }
 }
