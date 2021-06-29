@@ -7,7 +7,7 @@
 .map {
     background: #eaf7fe;
     padding-bottom: 2.7%;
-    height: 938px;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -135,9 +135,6 @@
 ============== */
 
 @media (max-width: 999px) {
-    .map {
-        height: 747px;
-    }
     .map__btn {
         width: 40px;
         height: 40px;
@@ -146,15 +143,5 @@
 @media (max-width: 766px) {
     .map {
         margin-top: 48px;
-    }
-}
-@media (max-width: 640px) {
-    .map {
-        height: 474px;
-    }
-}
-@media (max-width: 400px) {
-    .map {
-        height: 375px;
     }
 }
