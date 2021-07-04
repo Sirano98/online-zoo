@@ -1,8 +1,7 @@
 const map = document.querySelector(".inner__map"),
     btnPlus = document.querySelector(".map__btn-plus"),
     btnMinus = document.querySelector(".map__btn-minus"),
-    mapBlock = document.querySelector(".map"),
-    tooltips = document.querySelectorAll(".animal__tooltip");
+    mapBlock = document.querySelector(".map");
 
 let shiftX,
     shiftY,
@@ -39,12 +38,9 @@ function zoomOut() {
 function grabMap(event) {
     if (event.touches) {
         if (event.target.className === "animal__img" || event.target.className === "tooltip__link") {
-            console.log(event.target);
-            return
+            return;
         }
-
     }
-
     headerHeight = document.querySelector(".header").getBoundingClientRect().height;
     shiftX = (event.changedTouches ? event.changedTouches[0].pageX : event.pageX) - map.getBoundingClientRect().left;
     shiftY = (event.changedTouches ? event.changedTouches[0].pageY : event.pageY) - map.getBoundingClientRect().top;
@@ -63,21 +59,3 @@ function putMap() {
     mapBlock.removeEventListener("touchmove", moveMap);
     window.onscroll = null;
 }
-
-// function checkTypeOfEvent(event) {
-//     if (event.touches) {
-//         if (event.target.className === "animal__img") {
-//             event.target.nextElementSibling.classList.toggle("animal__tooltip-active");
-//         } else if (event.target.className === "tooltip__link" && "animal__tooltip") {
-//             mapBlock.removeEventListener("touchstart", grabMap);
-//             mapBlock.removeEventListener("mousedown", grabMap);
-//             return true
-//         } else {
-//             tooltips.forEach(tooltip => {
-//                 tooltip.classList.remove("animal__tooltip-active");
-//             });
-//         }
-
-//     }
-//     return false
-// }
