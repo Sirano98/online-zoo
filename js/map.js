@@ -11,7 +11,6 @@ let shiftX,
     typeOfEvent,
     headerHeight;
 
-// document.addEventListener("touchstart", toggleTooltips);
 btnPlus.addEventListener("click", zoomIn);
 btnMinus.addEventListener("click", zoomOut);
 btnPlus.addEventListener("touchstart", zoomIn);
@@ -38,7 +37,14 @@ function zoomOut() {
 }
 
 function grabMap(event) {
-    checkTypeOfEvent(event);
+    if (event.touches) {
+        if (event.target.className === "animal__img" || event.target.className === "tooltip__link") {
+            console.log(event.target);
+            return
+        }
+
+    }
+
     headerHeight = document.querySelector(".header").getBoundingClientRect().height;
     shiftX = (event.changedTouches ? event.changedTouches[0].pageX : event.pageX) - map.getBoundingClientRect().left;
     shiftY = (event.changedTouches ? event.changedTouches[0].pageY : event.pageY) - map.getBoundingClientRect().top;
@@ -58,17 +64,20 @@ function putMap() {
     window.onscroll = null;
 }
 
-function checkTypeOfEvent(event) {
-    if (event.touches) {
-        if (event.target.className === "animal__img") {
-            event.target.nextElementSibling.classList.toggle("animal__tooltip-active");
-        } else if (event.target.className === "tooltip__link" && "animal__tooltip") {
-            mapBlock.removeEventListener("touchstart", grabMap);
-            mapBlock.removeEventListener("mousedown", grabMap);
-        } else {
-            tooltips.forEach(tooltip => {
-                tooltip.classList.remove("animal__tooltip-active");
-            });
-        }
-    }
-}
+// function checkTypeOfEvent(event) {
+//     if (event.touches) {
+//         if (event.target.className === "animal__img") {
+//             event.target.nextElementSibling.classList.toggle("animal__tooltip-active");
+//         } else if (event.target.className === "tooltip__link" && "animal__tooltip") {
+//             mapBlock.removeEventListener("touchstart", grabMap);
+//             mapBlock.removeEventListener("mousedown", grabMap);
+//             return true
+//         } else {
+//             tooltips.forEach(tooltip => {
+//                 tooltip.classList.remove("animal__tooltip-active");
+//             });
+//         }
+
+//     }
+//     return false
+// }
